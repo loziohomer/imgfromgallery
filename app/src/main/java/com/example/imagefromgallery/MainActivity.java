@@ -38,7 +38,6 @@ import java.nio.file.Paths;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private ImageView image;
     private Button gallery, camera;
-    private SwitchCompat mySwitch;
 
     private final ActivityResultLauncher<Intent> launcher;
 
@@ -89,17 +88,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         gallery.setOnClickListener(this);
         camera.setOnClickListener(this);
-
-        mySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                } else {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                }
-            }
-        });
     }
 
     @Override
@@ -149,6 +137,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         image = findViewById(R.id.image);
         gallery = findViewById(R.id.gallery);
         camera = findViewById(R.id.camera);
-        mySwitch = findViewById(R.id.mySwitch);
     }
 }
